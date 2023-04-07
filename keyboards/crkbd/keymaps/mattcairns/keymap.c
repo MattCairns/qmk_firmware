@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_AMPR, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD,                      XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,  KC_SPC,     KC_ENT,   MO(3), KC_RALT
+                                          KC_LGUI, _______,  KC_SPC,     KC_ENT,   KC_DOT, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+------------------|           |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), XXXXXXX,             XXXXXXX, KC_1, KC_2, KC_3,   KC_0,  KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+---------|           |--------+--------+--------+--------+--------+--------|
-                                            MO(0), KC_SPC, KC_LGUI,    XXXXXXX,  MO(3), KC_RALT
+                                            MO(0), KC_SPC, KC_LGUI,    XXXXXXX,  KC_DOT, KC_RALT
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -63,14 +63,12 @@ const uint16_t PROGMEM combo_rofi[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_copy[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_copy_term[] = {KC_Z, KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_paste[] = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo_paste_term[] = {KC_X, KC_C, KC_V, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_term, LGUI(KC_ENT)),
     COMBO(combo_rofi, LGUI(KC_SPC)), 
     COMBO(combo_copy, LCTL(KC_C)), 
     COMBO(combo_copy_term, RCS(KC_C)), 
-    COMBO(combo_paste, LCTL(KC_V)), 
-    COMBO(combo_paste_term, RCS(KC_V)), 
+    COMBO(combo_paste, LSFT(KC_INS)), 
 };
 
 #ifdef OLED_ENABLE
