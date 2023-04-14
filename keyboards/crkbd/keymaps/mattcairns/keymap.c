@@ -22,11 +22,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_TAB,        KC_Q, KC_W, KC_E, KC_R, KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSLS,
+              KC_TAB,       KC_Q, KC_W, KC_E, KC_R, KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSLS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       LCTL_T(KC_ESC), LT(1,KC_A), LT(2, KC_S), KC_D, KC_F, KC_G,                  KC_H,    KC_J,    KC_K,    LT(2, KC_L), LT(1, KC_SCLN), RCTL_T(KC_QUOT),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-            KC_LSFT,       KC_Z, KC_X, KC_C, KC_V, KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_MINS,
+             KC_LSFT,       KC_Z, KC_X, KC_C, KC_V, KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_MINS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           MO(2),   KC_SPC,  KC_LGUI,  KC_BSPC,   KC_ENT, KC_RALT
                                       //`--------------------------'  `--------------------------'
@@ -35,13 +35,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, KC_EXLM,   KC_AT, KC_LCBR, KC_RCBR, KC_PIPE,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, KC_EXLM,   KC_AT, KC_LCBR, KC_RCBR, KC_PIPE,                      KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_HASH,  KC_DLR, KC_LPRN, KC_RPRN, KC_GRV,                       KC_LEFT, KC_DOWN,   KC_UP, KC_RIGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_AMPR, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD,                      XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,  KC_SPC,     KC_ENT,   KC_DOT, KC_RALT
+                                          KC_LGUI, _______,  KC_SPC,     KC_BSPC, KC_DOT, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+------------------|           |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), XXXXXXX,             XXXXXXX, KC_1, KC_2, KC_3,   KC_0,  KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+---------|           |--------+--------+--------+--------+--------+--------|
-                                            MO(0), KC_SPC, KC_LGUI,    XXXXXXX,  KC_DOT, KC_RALT
+                                            MO(0), KC_SPC, KC_LGUI,    KC_BSPC,  KC_DOT, KC_RALT
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -63,12 +63,20 @@ const uint16_t PROGMEM combo_rofi[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_copy[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_copy_term[] = {KC_Z, KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_paste[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_tmux[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_firefox_home[] = {KC_F, KC_H, COMBO_END};
+const uint16_t PROGMEM combo_firefox_work[] = {KC_F, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_asterix[] = {KC_R, KC_T, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_term, LGUI(KC_ENT)),
-    COMBO(combo_rofi, LGUI(KC_SPC)), 
-    COMBO(combo_copy, LCTL(KC_C)), 
-    COMBO(combo_copy_term, RCS(KC_C)), 
-    COMBO(combo_paste, LSFT(KC_INS)), 
+    COMBO(combo_rofi, LGUI(KC_SPC)),
+    COMBO(combo_copy, LCTL(KC_C)),
+    COMBO(combo_copy_term, RCS(KC_C)),
+    COMBO(combo_paste, LSFT(KC_INS)),
+    COMBO(combo_tmux, LCTL(KC_B)),
+    COMBO(combo_firefox_home, LSG(KC_H)),
+    COMBO(combo_firefox_work, LSG(KC_W)),
+    COMBO(combo_asterix, KC_PAST),
 };
 
 #ifdef OLED_ENABLE
