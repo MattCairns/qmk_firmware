@@ -66,6 +66,7 @@ const uint16_t PROGMEM combo_paste[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_tmux[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM combo_firefox_home[] = {KC_F, KC_H, COMBO_END};
 const uint16_t PROGMEM combo_firefox_work[] = {KC_F, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_slack[] = {KC_S, KC_L, COMBO_END};
 const uint16_t PROGMEM combo_asterix[] = {KC_R, KC_T, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_term, LGUI(KC_ENT)),
@@ -76,6 +77,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_tmux, LCTL(KC_B)),
     COMBO(combo_firefox_home, LSG(KC_H)),
     COMBO(combo_firefox_work, LSG(KC_W)),
+    COMBO(combo_slack, LSG(KC_S)),
     COMBO(combo_asterix, KC_PAST),
 };
 
